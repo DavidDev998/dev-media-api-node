@@ -17,6 +17,7 @@ As dependencias adicionadas nesse projeto foram:
  - express(4.18.1)
  - dotenv(16.0.1)
  - cors(2.8.5)
+ - sqlite3(5.0.8)
  
 ## Inicialização do projeto
 Verificar a instalação do [nodeJS](https://nodejs.org/en/download/) e do [typescript CLI](https://www.typescriptlang.org/download) na máquina.
