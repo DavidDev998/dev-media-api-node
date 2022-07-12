@@ -1,0 +1,30 @@
+{
+  "name": "dev-media-api-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  },
+  "repository": "https://github.com/DavidDev998/dev-media-api-node.git",
+  "author": "david@plastikastudio.com.br <david@plastikastudio.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.3",
+    "@types/sqlite3": "^3.1.8",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "sqlite3": "^5.0.8"
+  }
+}
