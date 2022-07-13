@@ -14,6 +14,7 @@ const SQL_TABLES_CREATE = `
         dateLoggedIn DATE,
         createdAt DATE,
         updatedAt DATE
+        removed INTEGER
 
     );
     CREATE TABLE posts (
@@ -24,6 +25,24 @@ const SQL_TABLES_CREATE = `
         user_id INTEGER NOT NULL,
         createdAt DATE,
         updatedAt DATE,
+        views INTEGER,
+        removed INTEGER,
+        FOREIGN KEY("user_id") REFERENCES "users"
+    );
+    CREATE TABLE likes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        post_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        createdAt DATE,
+        FOREIGN KEY("post_id") REFERENCES "posts",
+        FOREIGN KEY("user_id") REFERENCES "users"
+    );
+    CREATE TABLE unlikes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        post_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        createdAt DATE,
+        FOREIGN KEY("post_id") REFERENCES "posts",
         FOREIGN KEY("user_id") REFERENCES "users"
     );
     CREATE TABLE comments (
@@ -33,7 +52,18 @@ const SQL_TABLES_CREATE = `
         user_id INTEGER,
         createdAt DATE,
         updatedAt DATE,
+        removed INTEGER,
+        removedBy TEXT,
         FOREIGN KEY("user_id") REFERENCES "users",
+        FOREIGN KEY("post_id") REFERENCES "posts"
+    );
+    CREATE TABLE postsHistoric (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        post_id INTEGER NOT NULL,
+        title TEXT NOT NULL,
+        description TEXT NOT NULL,
+        image TEXT,
+        createdAt DATE,
         FOREIGN KEY("post_id") REFERENCES "posts"
     );
 `

@@ -28,7 +28,7 @@ usersRouter.post('/users', (req, res) => {
         }
     )
 })
-usersRouter.get('/users', (req, res) => {
+usersRouter.get('/users',middleware ,(req, res) => {
     usersDB.readAll((itens) => res.json(itens))
 })
 usersRouter.get('/users/:id', (req, res) => {
@@ -59,7 +59,7 @@ usersRouter.put('/users/:id', middleware,(req:any, res) => {
         }
     })
 })
-usersRouter.delete('/users/:id', (req, res) => {
+usersRouter.delete('/users/:id',middleware ,(req, res) => {
     const id: number = +req.params.id
     usersDB.delete(id, (notFound) => {
         if (notFound) {
