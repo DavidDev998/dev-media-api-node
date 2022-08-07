@@ -1,5 +1,5 @@
 # dev-media-api-node
-API desenvolvida para o teste prático para desenvolvedores back-end da empresa QuikDev
+API desenvolvida para simular o backend de uma rede social
 
 ## Stack utilizada
 Construi essa API com **nodeJS**(versão 16.16.0) em **typescript**(versão 4.7.4) pois é a stack com a qual melhor me identifico e tenho mais facilidade de trabalho, e também pela performance e versatilidade que o nodeJS tras. O servidor HTTP foi instanciado utilizando o pacote **express** do node.
